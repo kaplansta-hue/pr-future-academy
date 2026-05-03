@@ -715,7 +715,7 @@ body { font-family: 'Calibri', 'Inter', sans-serif !important; }
 
 <!-- ── Journey CTA ───────────────────────────────────── -->
 <div style="display:flex;justify-content:center;padding:52px 24px 40px;">
-  <a href="index.html#waitlist" class="btn-yf btn-yf-primary" style="font-size:0.95rem;font-weight:700;padding:16px 48px;letter-spacing:0.06em;" data-i18n="journey.cta">Personal Consultation</a>
+  <a id="wa-journey-cta" href="#" target="_blank" rel="noopener noreferrer" class="btn-yf btn-yf-primary" style="font-size:0.95rem;font-weight:700;padding:16px 48px;letter-spacing:0.06em;" data-i18n="journey.cta">Personal Consultation</a>
 </div>
 
 <!-- ── Core Objectives ─────────────────────────────── -->
@@ -2044,7 +2044,10 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   };
   function setWaHref(lang) {
     var msg = WA_MSG[lang] || WA_MSG.ru;
-    document.getElementById('wa-float').href = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg);
+    var href = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg);
+    document.getElementById('wa-float').href = href;
+    var cta = document.getElementById('wa-journey-cta');
+    if (cta) cta.href = href;
   }
   var initLang = 'ru';
   try { initLang = localStorage.getItem('prf_lang') || 'ru'; } catch (e) {}

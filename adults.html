@@ -394,6 +394,11 @@
 </div>
 </section>
 
+<!-- ── Journey CTA ───────────────────────────────────── -->
+<div style="display:flex;justify-content:center;padding:52px 24px 40px;">
+  <a id="wa-journey-cta" href="#" target="_blank" rel="noopener noreferrer" class="btn-yf btn-yf-primary" style="font-size:0.95rem;font-weight:700;padding:16px 48px;letter-spacing:0.06em;" data-i18n="journey.cta">Personal Consultation</a>
+</div>
+
 <!-- ── Core Objectives ─────────────────────────────── -->
 <section class="objectives-section" id="ae-objectives">
   <div class="objectives-header">
@@ -1192,7 +1197,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pillar2.body':'The biggest fear today is being "replaced by AI". Our students are immune to this because they are prepared for the coming change; one person holds the knowledge of an entire team.',
       'pillar3.number':'03 — Launch','pillar3.title':'Founders Mindset',
       'pillar3.body':'We don\'t just teach "how", we teach "why". Our students develop a strategic vision that allows them to identify profit and optimization opportunities where others see only problems.',
-      'journey.eyebrow':'The Learning Path','journey.heading':'From<br>Zero.<br>To<br>Launch.',
+      'journey.eyebrow':'The Learning Path','journey.heading':'From<br>Zero.<br>To<br>Launch.','journey.cta':'Personal Consultation',
       'journey.desc':'12 weeks.<br>5 phases.<br>1 real product.',
       'phase1.label':'# Phase One','phase1.duration':'','phase1.title':'Strategic Diagnostic Questionnaire',
       'phase1.body':'Precise mapping of personal goals and identifying your unique growth opportunities.',
@@ -1312,7 +1317,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pillar2.body':'הפחד הגדול ביותר היום הוא "החלפה על ידי ה-AI". התלמידים שלנו חסינים לזה, כי הם מוכנים לשינוי שמגיע, אדם אחד מחזיק בידע של צוות שלם.',
       'pillar3.number':'03 — השקה','pillar3.title':'חשיבה של Founders (מייסדים)',
       'pillar3.body':'אנחנו לא מלמדים רק "איך", אנחנו מלמדים "למה". התלמידים שלנו מפתחים ראייה אסטרטגית המאפשרת להם לזהות הזדמנויות רווח וייעול במקום שבו אחרים רואים רק בעיות.',
-      'journey.eyebrow':'מסלול הלמידה','journey.heading':'מאפס.<br>להשקה.',
+      'journey.eyebrow':'מסלול הלמידה','journey.heading':'מאפס.<br>להשקה.','journey.cta':'ייעוץ אישי',
       'journey.desc':'12 שבועות.<br>5 שלבים.<br>מוצר אחד אמיתי.',
       'phase1.label':'# שלב ראשון','phase1.duration':'','phase1.title':'שאלון אבחון אסטרטגי',
       'phase1.body':'מיפוי מדויק של מטרות אישיות וזיהוי הזדמנויות הצמיחה הייחודיות שלך.',
@@ -1432,7 +1437,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pillar2.body':'Самый большой страх сегодня — это «замена ИИ». Наши ученики защищены от этого, потому что они готовы к грядущим переменам: один человек обладает знаниями целой команды.',
       'pillar3.number':'03 — Запуск','pillar3.title':'Мышление основателей (Founders)',
       'pillar3.body':'Мы не просто учим «как», мы учим «почему». Наши ученики развивают стратегическое видение, позволяющее им находить возможности для прибыли и оптимизации там, где другие видят только проблемы.',
-      'journey.eyebrow':'Путь обучения','journey.heading':'От нуля.<br>До запуска.',
+      'journey.eyebrow':'Путь обучения','journey.heading':'От нуля.<br>До запуска.','journey.cta':'Персональная консультация',
       'journey.desc':'12 недель.<br>5 этапов.<br>1 реальный продукт.',
       'phase1.label':'# Этап первый','phase1.duration':'','phase1.title':'Стратегическая диагностическая анкета',
       'phase1.body':'Точное картирование личных целей и выявление уникальных возможностей для роста.',
@@ -1601,7 +1606,10 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   };
   function setWaHref(lang) {
     var msg = WA_MSG[lang] || WA_MSG.ru;
-    document.getElementById('wa-float').href = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg);
+    var href = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg);
+    document.getElementById('wa-float').href = href;
+    var cta = document.getElementById('wa-journey-cta');
+    if (cta) cta.href = href;
   }
   var initLang = 'ru';
   try { initLang = localStorage.getItem('prf_lang') || 'ru'; } catch (e) {}

@@ -522,6 +522,11 @@
 </div>
 </section>
 
+<!-- ── Journey CTA ───────────────────────────────────── -->
+<div style="display:flex;justify-content:center;padding:52px 24px 40px;">
+  <a id="wa-journey-cta" href="#" target="_blank" rel="noopener noreferrer" class="btn-yf btn-yf-primary" style="font-size:0.95rem;font-weight:700;padding:16px 48px;letter-spacing:0.06em;" data-i18n="journey.cta">Personal Consultation</a>
+</div>
+
 <!-- ── Core Objectives ─────────────────────────────── -->
 <section class="objectives-section" id="biz-objectives">
   <div class="objectives-header">
@@ -1261,7 +1266,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pillar2.body':"Every AI implementation we deploy is tied to a measurable outcome — reduced cost, faster cycle times, higher output per employee. Our teams don't just learn AI; they build automations that pay for themselves within weeks of going live.",
       'pillar3.number':'03 — Scale','pillar3.title':'Enterprise-Ready<br>AI Adoption',
       'pillar3.body':"Sustainable AI transformation requires more than tools — it requires culture, governance, and systems. We give your teams the frameworks to adopt AI responsibly, scale it confidently, and maintain a competitive edge as the technology evolves.",
-      'journey.eyebrow':'The Implementation Path','journey.heading':'From endless routine.<br>To absolute autonomy.',
+      'journey.eyebrow':'The Implementation Path','journey.heading':'From endless routine.<br>To absolute autonomy.','journey.cta':'Personal Consultation',
       'phase1.label':'# Phase One','phase1.title':'AI Readiness Audit',
       'phase1.body':'Map your current operations, identify the highest-value AI opportunities, and build a prioritized transformation roadmap specific to your business.',
       'phase2.label':'# Phase Two','phase2.title':'Team AI Fluency',
@@ -1391,7 +1396,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pillar2.body':'כל הטמעת AI אצלנו קשורה לתוצאה מדידה בשטח – הפחתת עלויות, קיצור זמני תהליכים והגדלת התפוקה לעובד. הצוותים שלנו לא רק "לומדים" AI, הם בונים אוטומציות שמחזירות את ההשקעה תוך שבועות ספורים מרגע ההשקה.',
       'pillar3.number':'03 — צמיחה','pillar3.title':'הטמעת AI ברמת הארגון',
       'pillar3.body':'טרנספורמציית AI יציבה דורשת הרבה יותר מסתם כלים – היא דורשת שינוי תרבות ארגונית, ניהול נכון ומערכות. אנחנו מספקים לצוותים מסגרות עבודה (Frameworks) להטמעה אחראית של AI, צמיחה בטוחה ושימור היתרון התחרותי לאורך זמן.',
-      'journey.eyebrow':'נתיב היישום','journey.heading':'משגרה שוחקת.<br>לאוטונומיה מוחלטת.',
+      'journey.eyebrow':'נתיב היישום','journey.heading':'משגרה שוחקת.<br>לאוטונומיה מוחלטת.','journey.cta':'ייעוץ אישי',
       'phase1.label':'# שלב ראשון','phase1.title':'ביקורת מוכנות AI',
       'phase1.body':'מיפוי הפעילות הנוכחית שלך, זיהוי הזדמנויות ה-AI בעלות הערך הגבוה ביותר, ובניית מפת דרכים לטרנספורמציה עדיפה ספציפית לעסק שלך.',
       'phase2.label':'# שלב שני','phase2.title':'שטף AI לצוות',
@@ -1521,7 +1526,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pillar2.body':'Каждое внедрение ИИ привязано к измеримому результату — снижению затрат, ускорению циклов, росту выпуска на сотрудника. Наши команды не просто изучают ИИ — они создают автоматизации, которые окупаются в течение нескольких недель после запуска.',
       'pillar3.number':'03 — Масштаб','pillar3.title':'Корпоративное<br>внедрение ИИ',
       'pillar3.body':'Устойчивая трансформация ИИ требует большего, чем инструменты — нужны культура, управление и системы. Мы даём командам фреймворки для ответственного внедрения ИИ, уверенного масштабирования и сохранения конкурентного преимущества.',
-      'journey.eyebrow':'Путь внедрения','journey.heading':'От бесконечной рутины.<br>К абсолютной автономии.',
+      'journey.eyebrow':'Путь внедрения','journey.heading':'От бесконечной рутины.<br>К абсолютной автономии.','journey.cta':'Персональная консультация',
       'phase1.label':'# Этап первый','phase1.title':'Аудит готовности к ИИ',
       'phase1.body':'Картирование текущих операций, выявление наиболее ценных возможностей ИИ и создание приоритетной дорожной карты трансформации для вашего бизнеса.',
       'phase2.label':'# Этап второй','phase2.title':'Владение ИИ для команды',
@@ -1749,7 +1754,10 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   };
   function setWaHref(lang) {
     var msg = WA_MSG[lang] || WA_MSG.ru;
-    document.getElementById('wa-float').href = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg);
+    var href = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg);
+    document.getElementById('wa-float').href = href;
+    var cta = document.getElementById('wa-journey-cta');
+    if (cta) cta.href = href;
   }
   var initLang = 'ru';
   try { initLang = localStorage.getItem('prf_lang') || 'ru'; } catch (e) {}
