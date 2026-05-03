@@ -27,13 +27,24 @@ body {
   .hero-title { font-size: 8.5vw; }
 }
 
-/* ── Hero title — slow, deliberate bloom ── */
+/* ── Hero title — quiet luxury bloom ── */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroLine2In {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 .hero-title {
   opacity: 0;
-  transform: translateY(20px);
-  animation: heroIn 2.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  transform: translateY(15px);
+  animation: heroIn 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
 }
-@keyframes heroIn { to { opacity: 1; transform: translateY(0); } }
+.hero-line2 {
+  opacity: 0;
+  animation: heroLine2In 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s forwards;
+}
 
 /* ── Vision section — Calibri typography ── */
 .vision-title {
