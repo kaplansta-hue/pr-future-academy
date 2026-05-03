@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m http.server 8080)",
+      "Bash(echo \"Server PID: $!\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "PowerShell(Start-Process python -ArgumentList \"-m\", \"http.server\", \"8080\" -WorkingDirectory \"c:\\\\Users\\\\���\\\\Desktop\\\\website 8\" -WindowStyle Hidden -PassThru)",
+      "PowerShell(Start-Sleep -Seconds 2; try { $r = Invoke-WebRequest -Uri \"http://localhost:8080/\" -UseBasicParsing -TimeoutSec 3; $r.StatusCode } catch { $_.Exception.Message })",
+      "PowerShell(Get-Process -Id 22132 -ErrorAction SilentlyContinue)",
+      "PowerShell(python --version)",
+      "PowerShell(python -c \"import socket; s=socket.socket\\(\\); s.bind\\(\\('127.0.0.1', 8080\\)\\); print\\('port available'\\); s.close\\(\\)\")",
+      "PowerShell(python -c \"print\\('hello'\\)\" 2>&1)",
+      "Bash(python3 -c \"print\\('hello'\\)\")",
+      "Bash(python -c \"print\\('hello'\\)\")",
+      "Bash(where python *)",
+      "Read(//usr/**)",
+      "Bash(npx --version)",
+      "Bash(where node *)",
+      "Bash(where npx *)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "PowerShell(Get-Command node, npx, php, ruby -ErrorAction SilentlyContinue)",
+      "PowerShell(Start-Sleep -Seconds 3; try { $r = Invoke-WebRequest -Uri \"http://localhost:8080/\" -UseBasicParsing -TimeoutSec 5; \"Status: \" + $r.StatusCode } catch { \"Error: \" + $_.Exception.Message })",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\���\\\\Desktop\\\\website 8\\\\index.html\")",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)"
+    ]
+  }
+}
