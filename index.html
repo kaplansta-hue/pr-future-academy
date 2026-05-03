@@ -11,6 +11,23 @@ body {
   font-family: 'Calibri', 'Inter', sans-serif !important;
 }
 
+/* ── Hero title — block-span flex column ── */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-wrap: unset;
+}
+.hero-line2 {
+  display: block;
+  white-space: nowrap;
+  font-size: 6.5vw;
+  line-height: 1.12;
+}
+@media (min-width: 768px) {
+  .hero-line2 { font-size: inherit; }
+}
+
 /* ── Hero title — slow, deliberate bloom ── */
 .hero-title {
   opacity: 0;
@@ -167,7 +184,7 @@ body {
 
 <!-- Hero -->
 <section class="hero">
-  <h1 class="hero-title" data-i18n="hero.title">The Art of Mastering the Future</h1>
+  <h1 class="hero-title"><span data-i18n="hero.title">Искусство</span><span class="hero-line2" data-i18n="hero.title2">владения&nbsp;будущим</span></h1>
   <div class="scroll-indicator">
     <div class="scroll-line"></div>
   </div>
@@ -317,7 +334,7 @@ body {
   const T = {
     en: {
       'nav.academy':'Academy','nav.programs':'Programs','nav.enroll':'Enroll','nav.apply':'Apply Now',
-      'hero.title':'The Art of Mastering the Future',
+      'hero.title':'The Art of','hero.title2':'Mastering the Future',
       'vision.title':'P.R FUTURE AI Academy',
       'vision.body1':'We teach exceptional knowledge and technological capabilities available to a select few',
       'vision.body2':'No experience. No coding. Full expert guidance at every step until you reach a steady income.',
@@ -341,7 +358,7 @@ body {
     },
     he: {
       'nav.academy':'האקדמיה','nav.programs':'תוכניות','nav.enroll':'הירשם','nav.apply':'הגש מועמדות',
-      'hero.title':'היכולת לשלוט בעתיד',
+      'hero.title':'היכולת','hero.title2':'לשלוט בעתיד',
       'vision.title':'P.R FUTURE אקדמיה לבינה מלאכותית',
       'vision.body1':'אנחנו מלמדים ידע יוצא דופן ויכולות טכנולוגיות שלא תפגשו מעולם',
       'vision.body2':'בלי ניסיון. בלי ידע בתכנות. ליווי מומחים מלא בכל שלב עד להגעה להכנסה יציבה',
@@ -366,7 +383,7 @@ body {
     },
     ru: {
       'nav.academy':'Академия','nav.programs':'Программы','nav.enroll':'Записаться','nav.apply':'Подать заявку',
-      'hero.title':'Искусство владения будущим',
+      'hero.title':'Искусство','hero.title2':'владения будущим',
       'vision.title':'P.R FUTURE Академия Искусственного Интеллекта',
       'vision.body1':'обучаем исключительным знаниям и технологическим возможностям, доступным немногим',
       'vision.body2':'Без опыта. Без программирования. Полное экспертное сопровождение на каждом этапе до выхода на стабильный доход',
