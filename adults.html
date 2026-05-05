@@ -1106,7 +1106,6 @@ const _projEN = {
   'proj7.title': 'Legal Contract Analysis System',        'proj7.creator': 'Michal, Corporate Lawyer',     'proj7.desc': 'Reviews contracts in seconds, identifies non-standard clauses, and generates summaries. Replaced 4 hours of lawyer work per document.',
   'proj8.title': 'AI for CEO Communications',             'proj8.creator': 'Oren, CEO',                    'proj8.desc': "Trained on the executive's communication style to draft board updates, investor letters, and LinkedIn content — in his voice.",
   'proj9.title': 'Real Estate Market Monitoring',         'proj9.creator': 'Tamar, Property Consultant',   'proj9.desc': 'Aggregates listings, valuations, and buyer sentiment in real-time. Generates market reports in 3 minutes instead of 3 hours.',
-  'card.explore': 'Explore Project',
 };
 const stage = document.getElementById('ae-proj-carousel');
 const dotsEl = document.getElementById('ae-carousel-dots');
@@ -1121,7 +1120,6 @@ const cardEls = projects.map((p, i) => {
     <div class="card-creator">${_projEN[p.creatorKey]}</div>
     <div class="card-desc-panel"><p>${_projEN[p.descKey]}</p></div>
     <div class="card-valuation-btn ${p.tier}">${p.value}</div>
-    <a class="card-explore" href="#">${_projEN['card.explore']} &nbsp;→</a>
   `;
   stage.appendChild(el); return el;
 });
@@ -1155,11 +1153,9 @@ window._updateCarouselLang = function(dict) {
     const t = el.querySelector('.card-proj-title');
     const c = el.querySelector('.card-creator');
     const d = el.querySelector('.card-desc-panel p');
-    const e = el.querySelector('.card-explore');
     if (t && dict[p.titleKey])    t.textContent = dict[p.titleKey];
     if (c && dict[p.creatorKey])  c.textContent = dict[p.creatorKey];
     if (d && dict[p.descKey])     d.textContent = dict[p.descKey];
-    if (e && dict['card.explore']) e.innerHTML  = dict['card.explore'] + ' &nbsp;→';
   });
 };
 
@@ -1309,7 +1305,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'proj7.title':'Legal Contract Analysis System','proj7.creator':'Michal, Corporate Lawyer','proj7.desc':'Reviews contracts in seconds, identifies non-standard clauses, and generates summaries. Replaced 4 hours of lawyer work per document.',
       'proj8.title':'AI for CEO Communications','proj8.creator':'Oren, CEO','proj8.desc':"Trained on the executive's communication style to draft board updates, investor letters, and LinkedIn content — in his voice.",
       'proj9.title':'Real Estate Market Monitoring','proj9.creator':'Tamar, Property Consultant','proj9.desc':'Aggregates listings, valuations, and buyer sentiment in real-time. Generates market reports in 3 minutes instead of 3 hours.',
-      'card.explore':'Explore Project',
       'footer':'© 2025 P.R FUTURE — AI Learning Academy. All rights reserved.'
     },
     he: {
@@ -1430,7 +1425,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'proj7.title':'מערכת לניתוח חוזים משפטיים','proj7.creator':'מיכל, עורכת דין תאגידית','proj7.desc':'בודקת חוזים בשניות, מזהה סעיפים חריגים ומייצרת סיכומים. החליפה 4 שעות של עבודת עורך דין למסמך בודד.',
       'proj8.title':'AI לתקשורת מנכ"ל','proj8.creator':'אורן, מנכ"ל','proj8.desc':'אומן על סגנון התקשורת של המנכ"ל לכתיבת עדכונים לדירקטוריון, מכתבים למשקיעים ותוכן ללינקדאין — בקול שלו.',
       'proj9.title':'ניטור שוק הנדל"ן','proj9.creator':'תמר, יועצת נדל"ן','proj9.desc':'מרכז נכסים, הערכות שווי ומגמות קונים בזמן אמת. מייצר דוחות שוק ב-3 דקות במקום ב-3 שעות.',
-      'card.explore':'צפו בפרויקט',
       'footer':'© 2025 P.R FUTURE — אקדמיה ללמידת AI. כל הזכויות שמורות.'
     },
     ru: {
@@ -1551,7 +1545,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'proj7.title':'Система анализа юридических контрактов','proj7.creator':'Michal, Corporate Lawyer','proj7.desc':'Проверяет контракты за секунды, выявляет нестандартные пункты и генерирует сводки. Заменила 4 часа работы юриста на один документ.',
       'proj8.title':'ИИ для коммуникаций CEO','proj8.creator':'Oren, CEO','proj8.desc':'Обучен стилю общения топ-менеджера для составления обновлений совету директоров, писем инвесторам и контента LinkedIn — в его голосе.',
       'proj9.title':'Мониторинг рынка недвижимости','proj9.creator':'Tamar, Property Consultant','proj9.desc':'Агрегирует листинги, оценки и настроения покупателей в реальном времени. Генерирует рыночные отчеты за 3 минуты вместо 3 часов.',
-      'card.explore':'Изучить проект',
       'footer':'© 2025 P.R FUTURE — Академия обучения ИИ. Все права защищены.'
     }
   };
