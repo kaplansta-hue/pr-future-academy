@@ -260,6 +260,10 @@
   .pricing-grid::-webkit-scrollbar { display: none; }
   .pricing-card { width: auto !important; max-width: none !important; min-width: unset !important; scroll-snap-align: center !important; box-sizing: border-box !important; }
 }
+@media (max-width: 768px) {
+  .pricing-grid { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 32px !important; overflow-x: unset !important; scroll-snap-type: unset !important; padding: 0 20px 20px !important; }
+  .pricing-card { width: 100% !important; max-width: 420px !important; margin: 0 auto !important; scroll-snap-align: unset !important; }
+}
 
 /* ── Journey strip — mobile vertical ────────────────────── */
 @media (max-width: 900px) {
