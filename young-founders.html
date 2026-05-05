@@ -882,6 +882,9 @@ body { font-family: 'Calibri', 'Inter', sans-serif !important; }
 .pricing-card:nth-child(1) .pc-cta, .pricing-card:nth-child(2) .pc-cta { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: #fff; }
 .pricing-card:nth-child(3) .pc-cta { background: linear-gradient(90deg, #ff6010 0%, #ffb800 100%); border: none; color: #000; font-weight: 800; box-shadow: 0 8px 32px rgba(255,120,0,0.4); }
 .pricing-footnote { text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.28); margin-top: 36px; letter-spacing: 0.04em; }
+/* ── Elite card corner ribbon ── */
+.pc-ribbon-clip { position: absolute; top: 0; right: 0; width: 140px; height: 140px; overflow: hidden; border-radius: 0 22px 0 0; pointer-events: none; z-index: 2; }
+.pc-ribbon { position: absolute; top: 35px; right: -45px; width: 175px; padding: 7px 0; background: linear-gradient(180deg, #F5C842 0%, #C9952A 100%); color: #1a1100; font-size: 0.52rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; text-align: center; transform: rotate(45deg); white-space: nowrap; box-shadow: 0 2px 10px rgba(0,0,0,0.4); }
 [data-pricing-card].card-revealed { transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease; }
 
 /* ── Pricing grid mobile horizontal scroll ───────────────── */
@@ -952,6 +955,7 @@ body { font-family: 'Calibri', 'Inter', sans-serif !important; }
 
     <!-- Card 3: Elite -->
     <div class="pricing-card reveal reveal-delay-2" data-pricing-card="3">
+      <div class="pc-ribbon-clip"><div class="pc-ribbon" data-i18n="ribbon.seats">Limited Seats</div></div>
       <div class="pc-inner">
         <div class="pc-tag" data-i18n="pc3.tag">Most Profitable</div>
         <div class="pc-name" data-i18n="pc3.name">Elite</div>
@@ -1723,6 +1727,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pc1.tag':'Basic Plan','pc1.name':'Basic','pc1.num':'3','pc1.total':'₪480 <span>total</span>','pc1.per':'₪160 / session',
       'pc2.tag':'Advanced Plan','pc2.name':'Advanced','pc2.num':'6','pc2.total':'₪900 <span>total</span>','pc2.per':'₪150 / session',
       'pc3.tag':'Most Profitable','pc3.name':'Elite','pc3.num':'10','pc3.total':'₪1,400 <span>total</span>','pc3.per':'₪140 / session','pc3.save':'✦ Save 13%',
+      'ribbon.seats':'Limited Seats',
       'pc.lessons':'LESSONS','pc.f1':'Personal work plan from an AI expert','pc.f2':'Individual support','pc.f3':'Ready-to-use prompt library','pc.f4':'Professional study materials','pc.f5':'Small group learning (up to 4 people)',
       'pc.cta':'Enroll Now','pricing.footnote':'All prices are in Israeli Shekels (₪) · Payment is required before the start of classes.',
       'stories.eyebrow':'Success Stories','stories.title':'What Our Pupils Say',
@@ -1830,6 +1835,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pc1.tag':'תוכנית בסיסית','pc1.name':'בסיסי','pc1.num':'3','pc1.total':'₪480 <span>סה"כ</span>','pc1.per':'₪160 / שיעור',
       'pc2.tag':'תוכנית מתקדמת','pc2.name':'מתקדם','pc2.num':'6','pc2.total':'₪900 <span>סה"כ</span>','pc2.per':'₪150 / שיעור',
       'pc3.tag':'הכי משתלם','pc3.name':'אליט','pc3.num':'10','pc3.total':'₪1,400 <span>סה"כ</span>','pc3.per':'₪140 / שיעור','pc3.save':'✦ חסכון 13%',
+      'ribbon.seats':'מספר מקומות מוגבל',
       'pc.lessons':'שיעורים','pc.f1':'תוכנית עבודה אישית ממומחה AI','pc.f2':'תמיכה אישית','pc.f3':'ספריית פרומפטים מוכנה לשימוש','pc.f4':'חומרי לימוד מקצועיים','pc.f5':'למידה בקבוצה קטנה (עד 4 אנשים)',
       'pc.cta':'הירשם עכשיו','pricing.footnote':'כל המחירים בשקלים ישראליים (₪) · התשלום נדרש לפני תחילת הלימודים.',
       'stories.eyebrow':'סיפורי הצלחה','stories.title':'מה התלמידים שלנו אומרים',
@@ -1937,6 +1943,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       'pc1.tag':'Базовый план','pc1.name':'Базовый','pc1.num':'3','pc1.total':'₪480 <span>итого</span>','pc1.per':'₪160 / занятие',
       'pc2.tag':'Продвинутый план','pc2.name':'Продвинутый','pc2.num':'6','pc2.total':'₪900 <span>итого</span>','pc2.per':'₪150 / занятие',
       'pc3.tag':'Самый выгодный','pc3.name':'Элит','pc3.num':'10','pc3.total':'₪1,400 <span>итого</span>','pc3.per':'₪140 / занятие','pc3.save':'✦ Экономия 13%',
+      'ribbon.seats':'Количество мест ограничено',
       'pc.lessons':'ЗАНЯТИЙ','pc.f1':'Личный план работы от ИИ-эксперта','pc.f2':'Индивидуальная поддержка','pc.f3':'Готовая библиотека промптов','pc.f4':'Профессиональные учебные материалы','pc.f5':'Обучение в малой группе (до 4 человек)',
       'pc.cta':'Записаться','pricing.footnote':'Все цены указаны в израильских шекелях (₪) · Оплата производится до начала занятий.',
       'stories.eyebrow':'Истории успеха','stories.title':'Что говорят наши ученики',
